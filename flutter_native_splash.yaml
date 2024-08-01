@@ -1,0 +1,16 @@
+flutter_native_splash:
+  #  Android below 12 and ios
+  color: "#ffffff"
+  image: assets/image/background.png
+  branding: assets/image/routegold.png
+  color_dark: "#1A243F"
+  image_dark: assets/image/background_dark.png
+  branding_dark: assets/image/routegold_dark.png
+  #  Android 12
+  android_12:
+    image: assets/image/background.png
+    branding: assets/image/routegold.png
+    icon_background_color: "#ffffff"
+    image_dark: assets/image/background_dark.png
+    icon_background_color_dark: "#1A243F"
+    branding_dark: assets/image/routegold_dark.png
