@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_project/home/hadeth/item_hadeth_name.dart';
 
-import '../app_colors.dart';
+import '../../app_colors.dart';
 
 class HadethTap extends StatefulWidget {
   @override
