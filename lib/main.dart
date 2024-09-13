@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_project/home/hadeth/hadeth_details_screen.dart';
+import 'package:islami_project/home/home_screen.dart';
+import 'package:islami_project/home/quran/sura_details_screen.dart';
+import 'package:islami_project/my_theme_data.dart';
+import 'package:islami_project/providers/app_config_providers.dart';
+import 'package:provider/provider.dart';
+
+void main() {
+  runApp(ChangeNotifierProvider(
+      create: (context) => AppConfigProvider(), child: MyApp()));
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: HomeScreen.routName,
+      theme: MyThemeData.lightTheme,
+      routes: {
+        HomeScreen.routName: (context) => HomeScreen(),
+        SuraDetailsScreen.routName: (context) => SuraDetailsScreen(),
+        HadethDetailsScreen.routName: (context) => HadethDetailsScreen()
+      },
+      locale: Locale(provider.appLanguage),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+    );
+  }
+}
